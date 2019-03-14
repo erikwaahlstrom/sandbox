@@ -16,6 +16,16 @@ const TestImageGridComponent = () => {
               to: "/second-page/",
               zSrc: data.zimply.childImageSharp.fluid,
             },
+            {
+              title: "Zimply",
+              to: "/second-page/",
+              zSrc: data.zimply.childImageSharp.fluid,
+            },
+            {
+              title: "Zimply",
+              to: "/second-page/",
+              zSrc: data.zimply.childImageSharp.fluid,
+            },
           ]
           return (
             <>
