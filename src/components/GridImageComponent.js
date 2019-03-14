@@ -25,13 +25,21 @@ const GridImageComponent = () => (
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
+            gridTemplateColumns: "repeat(4, 1fr)",
             gridGap: "15px",
           }}
         >
           {data.source.edges.map(({ node }, i) => (
             <>
-              <Image key={i} fluid={node.childImageSharp.fluid} />
+              <Image
+                style={{
+                  width: "100%",
+                  // If Grid column index < 2 (true) => span 2 (grid column 2 / 4). If not (false) => span 1 (1 / 4).
+                  gridColumn: i < 2 ? "span 2" : "span 1",
+                }}
+                key={i}
+                fluid={node.childImageSharp.fluid}
+              />
             </>
           ))}
         </div>
