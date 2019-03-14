@@ -22,9 +22,17 @@ const GridImageComponent = () => (
         }
       `}
       render={data => (
-        <div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gridGap: "15px",
+          }}
+        >
           {data.source.edges.map(({ node }, i) => (
-            <Image key={i} fluid={node.childImageSharp.fluid} />
+            <>
+              <Image key={i} fluid={node.childImageSharp.fluid} />
+            </>
           ))}
         </div>
       )}
