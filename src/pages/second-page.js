@@ -18,6 +18,7 @@ const SecondPage = () => (
               <Image fluid={data.astro.childImageSharp.fluid} alt="zimply" />
             </div>
             <Link to="/">Page 1</Link>
+            <Link to="/third-page">Page 3</Link>
           </>
         )
       }}

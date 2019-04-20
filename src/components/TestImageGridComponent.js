@@ -14,17 +14,17 @@ const TestImageGridComponent = () => {
             {
               title: "Zimply",
               to: "/second-page/",
-              zSrc: data.zimply.childImageSharp.fluid,
+              src: data.coin.childImageSharp.fluid,
             },
             {
               title: "Zimply",
               to: "/second-page/",
-              zSrc: data.zimply.childImageSharp.fluid,
+              src: data.zimply.childImageSharp.fluid,
             },
             {
               title: "Zimply",
               to: "/second-page/",
-              zSrc: data.zimply.childImageSharp.fluid,
+              src: data.zimply.childImageSharp.fluid,
             },
           ]
           return (
@@ -32,7 +32,7 @@ const TestImageGridComponent = () => {
               {companies.map((item, i) => (
                 <>
                   <Link to={item.to}>
-                    <Image key={i} fluid={item.zSrc} alt="zimply" />
+                    <Image key={i} fluid={item.src} alt="zimply" />
                     <h1>{item.title}</h1>
                   </Link>
                 </>
@@ -48,7 +48,14 @@ const TestImageGridQuery = graphql`
   query {
     zimply: file(relativePath: { eq: "zimply_stor.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    coin: file(relativePath: { eq: "coin.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
           ...GatsbyImageSharpFluid
         }
       }
